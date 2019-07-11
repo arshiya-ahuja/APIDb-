@@ -1,20 +1,20 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('KnowlegeBase', {
+    return sequelize.define('Intents', {
         IntentId: {
           type: type.INTEGER,
-          primaryKey: true,
+         primaryKey: true,
           unique:true
 
         },
         ProjectId: {
           type: type.STRING,
-          primaryKey: true,
           autoIncrement: false,
+          primaryKey:false,
           unique: true,
           foreignKey: true,
           references:{
-            model:'agent',
-            Key:'ProjectId',
+            model:'Agent',
+            Key:'ProjectId'
           }
         
         },
@@ -22,9 +22,9 @@ module.exports = (sequelize, type) => {
           type : type.STRING
         },
         
-        TrainingPharsesParts: {
-          type : type.ARRAY(type.STRING)
-        },
+        // TrainingPharsesParts: {
+        //   type : type.ARRAY(type.STRING)
+        // },
 
         MessageTexts:{
             type : type.STRING

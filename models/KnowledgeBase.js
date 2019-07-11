@@ -7,7 +7,7 @@ module.exports = (sequelize, type) => {
         },
         ProjectId: {
           type: type.STRING,
-          primaryKey: true,
+          primaryKey: false,
           autoIncrement: false,
           unique: true,
           foreignKey: true,
@@ -21,7 +21,7 @@ module.exports = (sequelize, type) => {
           type : type.STRING
         },
         
-        KnowledgeBaseFullName1: {
+        KnowledgeBaseFull: {
           type : type.STRING
         }
     })

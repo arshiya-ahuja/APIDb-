@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('KnowlegeBase', {
+    return sequelize.define('Context', {
         ContextId: {
           type: type.INTEGER,
           primaryKey: true,
@@ -10,16 +10,12 @@ module.exports = (sequelize, type) => {
         SessionId: {
             type: type.UUID,
             unique:true,
-            foreignKey: true,
-            references:{
-              model:'entities',
-              Key:'SessionId',
-            }
+            primaryKey:false
           },
 
         ProjectId: {
           type: type.STRING,
-          primaryKey: true,
+          primaryKey: false,
           autoIncrement: false,
           unique: true,
           foreignKey: true,

@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('KnowlegeBase', {
+    return sequelize.define('Documents', {
         DocumentId: {
           type: type.INTEGER,
           primaryKey: true,
@@ -11,22 +11,22 @@ module.exports = (sequelize, type) => {
           autoIncrement: false,
           unique: true,
           foreignKey: true,
-          references:{
-            model:'agent',
-            Key:'ProjectId',
-          }
+          // references:{
+          //   model:'agent',
+          //   Key:'ProjectId',
+          // }
         },
 
-        KnowledgeBaseFullName: {
+        KnowledgeBaseFullName1: {
             type: type.STRING,
-            primaryKey: true,
+            primaryKey: false,
             autoIncrement: false,
             unique: true,
             foreignKey: true,
-            references:{
-              model:'KnowledgeBase',
-              Key:'KnowledgeBaseFullName1',
-            }
+            // references:{
+            //   model:'KnowledgeBase',
+            //   Key:'KnowledgeBaseFull',
+            // }
           },
 
         DisplayName:{

@@ -2,7 +2,7 @@ const Sequelize = require('sequelize')
 const AgentModel = require('./models/Agent')
 const IntentsModel = require('./models/Intents')
 const EntitiesModel = require('./models/Entities')
-const ContextModel = require('./models/Context')
+ const ContextModel = require('./models/Context')
 const KnowledgeBaseModel = require('./models/KnowledgeBase')
 const DocumentModel = require('./models/Document')
 
@@ -20,7 +20,7 @@ const sequelize = new Sequelize('DialogFlowAPI', 'root', 'Arshiya2004', {
 })
 
 const Agent = AgentModel(sequelize, Sequelize)
-const Intents = IntentsModel(sequelize, Sequelize)
+ const Intents = IntentsModel(sequelize, Sequelize)
 const Entities = EntitiesModel(sequelize, Sequelize)
 const Context = ContextModel(sequelize, Sequelize)
 const KnowledgeBase = KnowledgeBaseModel(sequelize, Sequelize)
@@ -47,12 +47,7 @@ Agent.hasMany(Intents, {
     }
   })
 
-  Entities.hasOne(Context, {
-    foreignKey: {
-      name: 'SessionId',
-      allowNull: false
-    }
-  })
+ 
 
   Agent.hasMany(KnowledgeBase, {
     foreignKey: {

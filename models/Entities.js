@@ -1,5 +1,5 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('KnowlegeBase', {
+    return sequelize.define('Entities', {
         EntityTypeId: {
           type: type.INTEGER,
           primaryKey: true,
@@ -14,13 +14,13 @@ module.exports = (sequelize, type) => {
             type : type.STRING //ARRAY?
         },
 
-        Synonyms: {
-            type : type.ARRAY(type.STRING)
-          },
+        // Synonyms: {
+        //     type : type.ARRAY(type.STRING)
+        //   },
 
         ProjectId: {
           type: type.STRING,
-          primaryKey: true,
+          primaryKey: false,
           autoIncrement: false,
           unique: true,
           foreignKey: true,
