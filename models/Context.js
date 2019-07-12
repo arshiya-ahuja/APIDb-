@@ -15,12 +15,12 @@ module.exports = (sequelize, type) => {
 
         ProjectId: {
           type: type.STRING,
-          primaryKey: false,
+          primaryKey: true,
           autoIncrement: false,
           unique: true,
           foreignKey: true,
           references:{
-            model:'agent',
+            model:'agents',
             Key:'ProjectId',
           }
         

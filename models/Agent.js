@@ -1,8 +1,9 @@
 module.exports = (sequelize, type) => {
-    return sequelize.define('agents', {
+    return sequelize.define('agent', {
         AgentId: {
           type: type.INTEGER,
-          primaryKey: true,
+          //primaryKey: true,
+          autoIncrement: true,
           unique:true
         },
         ProjectId: {
@@ -12,7 +13,8 @@ module.exports = (sequelize, type) => {
           unique: true
         },
         displayName:{
-          type : type.STRING
+          type : type.STRING,
+          allowNull: false
         }
     })
 
