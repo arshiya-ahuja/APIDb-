@@ -2,6 +2,7 @@ module.exports = (sequelize, type) => {
     return sequelize.define('Context', {
         ContextId: {
           type: type.INTEGER,
+          autoIncrement: true,
           primaryKey: true,
           unique:true
 

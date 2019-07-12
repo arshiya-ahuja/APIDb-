@@ -2,12 +2,14 @@ module.exports = (sequelize, type) => {
     return sequelize.define('Entities', {
         EntityTypeId: {
           type: type.INTEGER,
+          autoIncrement:true,
           primaryKey: true,
           unique:true
 
         },
         EntityTypeId:{
             type : type.INTEGER
+            
           },
 
         EntityValue:{
