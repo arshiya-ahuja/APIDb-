@@ -19,12 +19,12 @@ app.get('/api/Agent', (req, res) => {
 //intents 
 app.post('/api/Intent', (req, res) => {
     console.log(req.body)
-    Agent.create(req.body)
+    Intents.create(req.body)
         .then(user => res.json(user))
 })
 
 app.get('/api/Intent', (req, res) => {
-    Agent.findAll().then(users => res.json(users))
+    Intents.findAll().then(users => res.json(users))
 })
 
 
