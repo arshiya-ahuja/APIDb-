@@ -22,7 +22,7 @@ module.exports = (sequelize, type) => {
           type : type.STRING
         },
         
-        KnowledgeBaseFull: {
+        KnowledgeBaseFullNameId: {
           type : type.STRING
         }
     })

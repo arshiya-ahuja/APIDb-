@@ -4,7 +4,8 @@ const IntentsModel = require('./models/Intents')
 const EntitiesModel = require('./models/Entities')
  const ContextModel = require('./models/Context')
 const KnowledgeBaseModel = require('./models/KnowledgeBase')
-// const DocumentModel = require('./models/Document')
+//const DocumentModel = require('./models/Document')
+
 
 
 //check username and password 
@@ -20,11 +21,11 @@ const sequelize = new Sequelize('DialogFlowAPI', 'root', 'Arshiya2004', {
 })
 
 const Agent = AgentModel(sequelize, Sequelize)
- const Intents = IntentsModel(sequelize, Sequelize)
+const Intents = IntentsModel(sequelize, Sequelize)
 const Entities = EntitiesModel(sequelize, Sequelize)
 const Context = ContextModel(sequelize, Sequelize)
 const KnowledgeBase = KnowledgeBaseModel(sequelize, Sequelize)
-// const Document = DocumentModel(sequelize, Sequelize)
+//const Document = DocumentModel(sequelize, Sequelize)
 
 Agent.hasMany(Intents, {
     foreignKey: {
@@ -58,7 +59,7 @@ Agent.hasMany(Intents, {
 
   // KnowledgeBase.hasMany(Document, {
   //   foreignKey: {
-  //     name: 'KnowledgeBaseFull',
+  //     name: 'KnowledgeBaseFullNameId',
   //     allowNull: false
   //   }
   // })
@@ -80,5 +81,5 @@ module.exports = {
   Entities,
   Context,
   KnowledgeBase,
- // Document
+  // Document
 }
